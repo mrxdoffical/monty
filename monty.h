@@ -38,12 +38,38 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *header;
-
+typedef void (*op_func)(stack_t **, unsigned int);
+/*error functions*/
 void error_1(int error_code, ...);
 void error_2(int error_code, ...);
 void str_errors(int error_code, ...);
+/*stack functions*/
+void insert_stack(stack_t **n_node, __attribute__((unused))unsigned int ln);
 void pop_max(stack_t **stack, unsigned int line_number);
 void print_all(stack_t **stack, unsigned int line_number);
 void print_top(stack_t **stack, unsigned int line_number);
 void free_node(void);
+stack_t *node_creator(int n);
+void free_node(void);
+void queue_adder(stack_t **new_node, __attribute__((unused))unsigned int ln);
+/*math func*/
+void nop(stack_t **stack, unsigned int line_number);
+void node_swapper(stack_t **stack, unsigned int line_number);
+void node_addittion(stack_t **stack, unsigned int line_number);
+void node_substractor(stack_t **stack, unsigned int line_number);
+void node_dividing(stack_t **stack, unsigned int line_number);
+void node_mul(stack_t **, unsigned int);
+void node_mod(stack_t **, unsigned int);
+/*file functions*/
+void file_opener(char *file_name);
+void file_r(FILE *fd);
+int line_praser(char *buffer, int line_number, int format);
+int len_chars(FILE *);
+
+/*String operations*/
+void print_char(stack_t **, unsigned int);
+void print_str(stack_t **, unsigned int);
+void rotate_left(stack_t **stack, __attribute__((unused))unsigned int ln);
+void rotate_right(stack_t **stack, __attribute__((unused))unsigned int ln);
+
 #endif
