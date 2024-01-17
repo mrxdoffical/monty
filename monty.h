@@ -37,4 +37,13 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *header;
+
+void error_1(int error_code, ...);
+void error_2(int error_code, ...);
+void str_errors(int error_code, ...);
+void pop_max(stack_t **stack, unsigned int line_number);
+void print_all(stack_t **stack, unsigned int line_number);
+void print_top(stack_t **stack, unsigned int line_number);
+void free_node(void);
 #endif
