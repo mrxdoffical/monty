@@ -65,6 +65,7 @@ void file_opener(char *file_name);
 void file_r(FILE *fd);
 int line_praser(char *buffer, int line_number, int format);
 int len_chars(FILE *);
+void find_func(char *opcode, char *value, int length, int f);
 
 /*String operations*/
 void print_char(stack_t **, unsigned int);
