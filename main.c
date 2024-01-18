@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	file_opener(argv[1]);
-	free_node();
+	free_nodes ();
 	return (0);
 }
 
