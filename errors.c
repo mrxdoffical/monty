@@ -12,7 +12,7 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void error_1(int error_code, ...)
+void err(int error_code, ...)
 {
 	va_list ag;
 	char *op;
@@ -42,7 +42,7 @@ void error_1(int error_code, ...)
 		default:
 			break;
 	}
-	free_node();
+	free_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -54,7 +54,7 @@ void error_1(int error_code, ...)
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void error_2(int error_code, ...)
+void more_err(int error_code, ...)
 {
 	va_list ag;
 	char *op;
@@ -83,7 +83,7 @@ void error_2(int error_code, ...)
 		default:
 			break;
 	}
-	free_node();
+	free_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -93,7 +93,7 @@ void error_2(int error_code, ...)
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void str_errors(int error_code, ...)
+void string_err(int error_code, ...)
 {
 	va_list ag;
 	int l_num;
@@ -111,6 +111,6 @@ void str_errors(int error_code, ...)
 		default:
 			break;
 	}
-	free_node();
+	free_nodes();
 	exit(EXIT_FAILURE);
 }
